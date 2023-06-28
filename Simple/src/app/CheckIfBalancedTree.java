@@ -20,7 +20,7 @@ public class CheckIfBalancedTree {
        
                if (root == null) return true;
        
-               if (Math.abs(height(root.left)- height(root.right)) > 1) return false;
+               if (Math.abs(height(root.left) - height(root.right)) > 1) return false;
        
                return isBalanced(root.left) && isBalanced(root.right);
                

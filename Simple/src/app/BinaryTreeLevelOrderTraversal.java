@@ -29,7 +29,7 @@ public class BinaryTreeLevelOrderTraversal {
 
         while (! childQueue.isEmpty()) {
 
-            LinkedList<Integer> level = new ArrayList<>();
+            List<Integer> level = new ArrayList<>();
 
             LinkedList<TreeNode> queue = childQueue;
 

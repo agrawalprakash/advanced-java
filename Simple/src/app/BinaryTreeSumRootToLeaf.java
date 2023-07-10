@@ -18,7 +18,7 @@ class BinaryTreeSumRootToLeaf {
         }
 
     int total;
-
+ 
     public int sumNumbers(TreeNode root) {
         
             total = 0;

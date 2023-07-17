@@ -50,3 +50,20 @@ public class CopyListWithRandomPointer {
 
 
 }
+
+interface Car {
+
+    public void applyBreak();
+}
+
+class CarInfor implements Car {
+
+    public void applyBreak() {
+
+    }
+
+    public void pressAccelerator() {
+        
+    }
+
+}

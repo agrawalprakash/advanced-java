@@ -10,9 +10,11 @@ class Solution {
             for (int j = 0; j < N; j++) {
                 
                 
-                if (isConnected[i][j] == 1) {
-                    uf.union(i, j);
+                if (i == j || isConnected[i][j] == 0) {
+                   continue;
                 }
+                
+                 uf.union(i, j);
                 
             }
             

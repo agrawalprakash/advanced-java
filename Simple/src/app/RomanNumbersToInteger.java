@@ -5,37 +5,32 @@ import java.util.Map;
 
 public class RomanNumbersToInteger {
 
-        public int romanToInt(String s) {
+    public int romanToInt(String s) {
         
+        int ans = 0;
         
-        Map<Character, Integer> map = new HashMap<>();
+        int[] roman = new int[128];
         
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+        roman['I'] = 1;
+        roman['V'] = 5;
+        roman['X'] = 10;
+        roman['L'] = 50;
+        roman['C'] = 100;
+        roman['D'] = 500;
+        roman['M'] = 1000;
         
-        int result = map.get(s.charAt(s.length()-1));
-        
-        for (int i = s.length()-2; i >= 0; i--) {
+        for (int i = 0; i+1 < s.length(); ++i) {
             
-            if (map.get(s.charAt(i)) < map.get(s.charAt(i+1))) {
+            if (roman[s.charAt(i)] < roman[s.charAt(i+1)]) {
                 
-                result = result - map.get(s.charAt(i));
+                ans = ans - roman[s.charAt(i)];
                 
             } else {
-                
-                result = result + map.get(s.charAt(i));
-                
+                ans = ans + roman[s.charAt(i)];
             }
-            
         }
         
-        return result;
-        
+       return ans + roman[s.charAt(s.length()-1)];
     }
     
 }
